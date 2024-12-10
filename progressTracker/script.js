@@ -161,7 +161,6 @@ const applyTheme = theme => {
 const resetProgram = () => {
   // Example: localStorage.clear();
   // Reload the page or reset variables as needed
-  localStorage.clear();
 
   // Reset variables
   elapsedSeconds = 0;
@@ -202,11 +201,7 @@ tabButtons.forEach(button => {
 // Load saved data on page load
 window.onload = function () {
   loadData(); // Load the saved timer data
-};
 
-// Load saved theme on page load
-window.onload = function () {
-  loadData(); // Load the timer data
   const savedTheme = localStorage.getItem('theme') || 'dark-theme'; // Default to dark theme
   applyTheme(savedTheme);
   themeSwitch.checked = savedTheme === 'light-theme'; // Set toggle switch state
